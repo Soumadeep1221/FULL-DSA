@@ -45,3 +45,32 @@ public class GCDorHCF {
 //         System.out.println(GCD(13,11));
 //     }
 // }
+
+
+// Euclidean Algorithm
+
+
+public static int GCD(int n1, int n2)
+{
+        while(n1>0 && n2>0)
+        {
+            if(n1>n2)
+                n1%=n2;
+            else
+                n2%=n1;
+        }
+        if(n1==0)
+            return n2;
+        return n1;
+    }
+
+
+    // For CP
+//     public static int GCD(int a, int b) { //Widely used in CP
+//     while (b != 0) {
+//         int temp = b;    STEP 1: a=28,b=18 STEP 2:-a=18,b=10 and so on.....
+//         b = a % b;
+//         a = temp;
+//     }
+//     return a;
+// }
