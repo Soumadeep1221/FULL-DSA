@@ -25,6 +25,7 @@ public class Print_Divisors {
     public int[] divisors(int n)
     {
         List<Integer> ls= new ArrayList<>(); // similar to vector
+        // Loop is running Math.sqrt(n) times i.e O(Math.sqrt(n))
         for(int i=1;i<=Math.sqrt(n);i++)
         {
             if(n%i==0)
@@ -34,10 +35,17 @@ public class Print_Divisors {
                     ls.add(n/i);
             }
         }
+        // O(n log n) where n=no. of factors in list
+        
+        // log n levels (splits) i.e. here the sort() function is more or less similar to merge sort which means divide and conquer.
+
+        // n work per level
+
+        // Total Work = n × log n = O(n log n)
         Collections.sort(ls); // similar to sort();
 
         int[] res=new int[ls.size()];
-        for(int i=0;i<ls.size();i++)
+        for(int i=0;i<ls.size();i++) // O(n) where n=no. of factors in list
             res[i]=ls.get(i); // similar to *it or v[0] if v is a vector
         return res;
     }
