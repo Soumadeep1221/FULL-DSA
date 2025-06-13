@@ -114,3 +114,202 @@ void explainList() {
 
 
 // 3) Deque
+
+void explainDeque() {
+    deque<int> dq;
+
+    dq.push_back(1);       // {1}
+    dq.emplace_back(2);    // {1, 2}
+    dq.push_front(4);      // {4, 1, 2}
+    dq.emplace_front(3);   // {3, 4, 1, 2}
+
+    dq.pop_back();         // {3, 4, 1}
+    dq.pop_front();        // {4, 1}
+
+    dq.back();             // 1
+    dq.front();            // 4
+
+    // rest functions same as vector
+    // begin, end, rbegin, rend, clear, insert, size, swap
+}
+
+
+// 4) Stack
+
+void explainStack() {
+    stack<int> st;
+
+    st.push(1);      // {1}
+    st.push(2);      // {2, 1}
+    st.push(3);      // {3, 2, 1}
+    st.push(3);      // {3, 3, 2, 1}
+    st.emplace(5);   // {5, 3, 3, 2, 1}
+
+    cout << st.top();     // prints 5
+    // "** st[2] is invalid **"
+
+    st.pop();             // st looks like {3, 3, 2, 1}
+
+    cout << st.top();     // 3
+    cout << st.size();    // 4
+    cout << st.empty();   // 0 (false)
+
+    stack<int> st1, st2;
+    st1.swap(st2);
+}
+
+
+// 5) Queue
+
+void explainQueue() {
+    queue<int> q;
+
+    q.push(1);       // {1}
+    q.push(2);       // {1, 2}
+    q.emplace(4);    // {1, 2, 4}
+
+    q.back() += 5;
+
+    cout << q.back();     // prints 9
+    // Q is {1, 2, 9}
+    cout << q.front();    // prints 1
+
+    q.pop();              // {2, 9}
+    cout << q.front();    // prints 2
+
+    // size, swap, empty same as stack
+}
+
+
+// 6) Priority Queue
+
+void explainPQ() {
+    priority_queue<int> pq;
+
+    pq.push(5);        // {5}
+    pq.push(2);        // {5, 2}
+    pq.push(8);        // {8, 5, 2}
+    pq.emplace(10);    // {10, 8, 5, 2}
+
+    cout << pq.top();  // prints 10
+
+    pq.pop();          // {8, 5, 2}
+    cout << pq.top();  // prints 8
+
+    // size, swap, empty functions same as others
+
+    // Minimum Heap
+    priority_queue<int, vector<int>, greater<int>> pq;
+    pq.push(5);        // {5}
+    pq.push(2);        // {2, 5}
+    pq.push(8);        // {2, 5, 8}
+    pq.emplace(10);    // {2, 5, 8, 10}
+
+    cout << pq.top();  // prints 2
+}
+
+
+// 7) Set
+
+void explainSet() {
+    set<int> st;
+    st.insert(1);       // {1}
+    st.emplace(2);      // {1, 2}
+    st.insert(2);       // {1, 2}
+    st.insert(4);       // {1, 2, 4}
+    st.insert(3);       // {1, 2, 3, 4}
+
+    // Functionality of insert in vector can be used also,
+    // that only increases efficiency
+
+    // begin(), end(), rbegin(), rend(), size(), empty(), swap() are same as those of above
+
+    auto it = st.find(3);   // returns iterator to 3
+    auto it = st.find(6);   // returns st.end() as 6 not found
+
+    st.erase(5);            // erases 5 if present, takes logarithmic time
+
+    int cnt = st.count(1);  // checks if 1 is present, returns 1 or 0
+
+    auto it = st.find(3);   // returns iterator to 3
+    st.erase(it);   // it takes constant time
+
+    // {1, 2, 3, 4, 5}
+    auto it1 = st.find(2);
+    auto it2 = st.find(4);
+    st.erase(it1, it2);  // after erase: {1, 4, 5} — removes elements in the range [2, 3]
+
+    // lower_bound() and upper_bound() function works the same way as in vector
+
+    // Syntax:
+    auto it = st.lower_bound(2);  // returns iterator to first element >= 2
+    auto it = st.upper_bound(3);  // returns iterator to first element > 3
+
+}
+
+
+// 8) Multiset
+
+void explainMultiSet() {
+    // Everything is same as set
+    // only stores duplicate elements also
+
+    multiset<int> ms;
+    ms.insert(1);  // {1}
+    ms.insert(1);  // {1, 1}
+    ms.insert(1);  // {1, 1, 1}
+
+    ms.erase(1);   // all 1's erased
+
+    int cnt = ms.count(1);  // count of element 1
+
+    // only a single one erased
+    ms.erase(ms.find(1));
+
+    ms.erase(ms.find(1), ms.find(1) + 2);  // erase a range
+
+    // rest all functions same as set
+}
+
+
+// 9) Unordered Set
+
+void explainUSet() {
+    unordered_set<int> st;
+
+    // lower_bound and upper_bound function does not work,
+    // rest all functions are same as set
+
+    // It does not store elements in any particular order,
+    // but has better average time complexity than set
+    // (except in rare cases of hash collisions).
+}
+
+
+// 10) Map
+
+void explainMap() {
+    map<int, int> mpp;
+
+    map<int, pair<int, int>> mpp;   // map with value as pair
+    map<pair<int, int>, int> mpp;   // map with key as pair
+
+    mpp[1] = 2;
+    mpp.emplace({3, 1});
+    mpp.insert({2, 4});
+    mpp[{2, 3}] = 10;
+
+    // map content:
+    // {
+    //   {1, 2},
+    //   {2, 4},
+    //   {3, 1}
+    // }
+
+    for (auto it : mpp) {
+        cout << it.first << " " << it.second << endl;
+    }
+
+    cout << mpp[1];
+    cout << mpp[5];  // will insert key 5 with value 0 if not already present
+}
