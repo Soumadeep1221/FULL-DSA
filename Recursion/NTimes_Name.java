@@ -21,7 +21,7 @@ class NTimes_Name
         else
         {
             System.out.println(str);
-            print(str,--n);
+            print(str,--n); //Backtracking (Going from the back)
         }
     }
 }
