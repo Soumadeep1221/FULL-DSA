@@ -312,4 +312,82 @@ void explainMap() {
 
     cout << mpp[1];
     cout << mpp[5];  // will insert key 5 with value 0 if not already present
+
+    auto it = mpp.find(3);
+    cout << *(it).second;
+
+    auto it = mpp.find(5); // → mpp.end() if not found
+
+    // This is the syntax
+    auto it = mpp.lower_bound(2);  // First key ≥ 2
+    auto it = mpp.upper_bound(3);  // First key > 3
+
+    // erase, swap, size, empty are same as above
+}
+
+
+// 11)Multimap
+
+void explainMultimap() {
+    // everything same as map, only it can store multiple keys
+    // only mpp[key] cannot be used here
+}
+
+
+// 12) Unordered Map
+
+void explainUnorderedMap() {
+    // same as set and unordered_Set difference.
+}
+
+
+
+
+                // ALGORITHMS
+
+
+
+
+bool comp(pair<int,int> p1, pair<int,int> p2) {
+    if(p1.second < p2.second) {
+        return true;
+    } else if(p1.second == p2.second) {
+        if(p1.first > p2.second) return true;
+    }
+    return false;
+}
+
+
+void explainExtra() {
+
+    sort(a, a + n);
+    sort(v.begin(), v.end());
+
+    sort(a + 2, a + 4);
+
+    sort(a, a + n, greater<int>());
+
+    pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+
+    // sort it according to second element
+    // if second element is same, then sort
+    // it according to first element but in descending
+
+    sort(a, a + n, comp);
+
+    // {4,1}, {2,1}, {1,2}
+
+    int num = 7;
+    int cnt = __builtin_popcount();
+
+    long long num = 165786578687;
+    int cnt = __builtin_popcountll();
+
+    string s = "123";
+
+    do {
+        cout << s << endl;
+    } while (next_permutation(s.begin(), s.end()));
+
+    int maxi = *max_element(a,a+n); // Same we have min_element
 }

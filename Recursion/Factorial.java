@@ -16,3 +16,5 @@ public class Factorial {
             return N*NFactorial(N-1);
     }
 }
+
+    // // T.C-> O(N)   S.C-> O(N)
