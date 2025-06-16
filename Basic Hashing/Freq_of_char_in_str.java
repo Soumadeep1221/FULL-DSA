@@ -10,13 +10,15 @@ public class Freq_of_char_in_str {
 
         // Character Hashing
 
-        int hash[]=new int[26]; // As I know the inputs will be in small letters.  // If you don't aware od the inputs the use int hash[]=new int[256]; as we have 256 characters.
+        // Pre-compute or Pre-storing
+
+        int hash[]=new int[26]; // As I know the inputs will be in small letters.  // If you don't aware of the inputs the use int hash[]=new int[256]; as we have 256 characters.
 
         for(int i=0;i<str.length();i++)
         {
-            hash[str.charAt(i)-'a']+=1;
+            hash[str.charAt(i)-'a']+=1; // Fetching  For array size of 256, hash[str.charAt(i)]+=1;(I think you are getting it why)
         }
-        System.out.println("The frequency of "+ch+" is "+hash[ch-'a']);   
+        System.out.println("The frequency of "+ch+" is "+hash[ch-'a']); // Same here
     }
 }
 
