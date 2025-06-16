@@ -13,9 +13,19 @@ public class Freq_of_arr_ele {
         System.out.println("Enter the number to get the frequency of it:-");
         int n=sc.nextInt();
         sc.close();
-        System.out.println("The frequency of "+n+" is "+Freq_No(arr,n));
-    }
 
+        // Hashing (Takes much less time than previous process) i.e Number Hashing
+
+        // Pre-compute or Pre-storing
+
+        int hash[]=new int[11];
+        for(int i=0;i<5;i++)
+        {
+            hash[arr[i]]+=1;
+        }
+        System.out.println("The frequency of "+n+" is "+hash[n]); // Fetching
+    }
+}
     // According to you this will be your 1st approach but this process eventually end up taking lots of time.
 
 
@@ -29,18 +39,3 @@ public class Freq_of_arr_ele {
     //     }
     //     return cc;
     // }
-
-
-    // Hashing (Takes much less time than previous process)
-
-
-    public static int Freq_No(int arr[],int n)
-    {
-        int hash[]=new int[11];
-        for(int i=0;i<5;i++)
-        {
-            hash[arr[i]]+=1;
-        }
-        return hash[n];
-    }
-}
