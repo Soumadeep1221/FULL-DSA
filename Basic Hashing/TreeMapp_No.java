@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.Map;
-public class TreeMapp {
+public class TreeMapp_No {
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
@@ -44,4 +44,4 @@ public class TreeMapp {
                         // if(tp.get(A)==null)
                         //     tp.get(A)=0;
 
-// The actual T.C of TreeMap while for storing or fetching is O(log n) (In all cases i.e Best,Avg,Worst) because it is is usually implemented using a Red-Black Tree, which is a kind of self-balancing binary search tree.(This is the reason why we are getting keys in ordered form)
+// The actual T.C of TreeMap while for storing or fetching is O(log n)(In all cases i.e Best,Avg,Worst)(where n is the no. of elements in the map) because it is is usually implemented using a Red-Black Tree, which is a kind of self-balancing binary search tree.(This is the reason why we are getting keys in ordered form)
