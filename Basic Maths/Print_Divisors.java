@@ -19,13 +19,35 @@
 // Explanation: The divisors of 8 are 1, 2, 4, 8.
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Scanner;
 
-public class Print_Divisors {
-    public int[] divisors(int n)
+public class Print_Divisors 
+{
+    public static void main(String[] args)
     {
-        List<Integer> ls= new ArrayList<>(); // similar to vector
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number to find its divisors:-");
+        int n=sc.nextInt();
+        sc.close();
+
+        int[] res=divisors(n);
+
+        for (int i : res)
+        {
+            System.out.print(i+" ");
+        }
+    }
+    public static int[] divisors(int n)
+    {
+        List<Integer> ls= new ArrayList<>(); // similar to vector<int> v;
+
+        // If you're storing int values (primitive type), you must remember that Java maps can't hold primitive types directly — they use their wrapper class (Integer).
+
         // Loop is running Math.sqrt(n) times i.e O(Math.sqrt(n))
+
         for(int i=1;i<=Math.sqrt(n);i++)
         {
             if(n%i==0)
