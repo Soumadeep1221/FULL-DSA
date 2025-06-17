@@ -35,7 +35,7 @@ public class Print_Divisors
 
         int[] res=divisors(n);
 
-        for (int i : res)
+        for (int i:res) // Using for-each loop as we don't know the exact size of the array.
         {
             System.out.print(i+" ");
         }
@@ -68,7 +68,7 @@ public class Print_Divisors
 
         int[] res=new int[ls.size()];
         for(int i=0;i<ls.size();i++) // O(n) where n=no. of factors in list
-            res[i]=ls.get(i); // similar to *it or v[0] if v is a vector
+            res[i]=ls.get(i); // similar to *it or v[0]
         return res;
     }
 }
