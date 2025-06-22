@@ -33,7 +33,7 @@ public class Quick_sort {
                 i++;
             while (arr[j]>pivot && j>=low+1) // Same reason here
                 j--;
-            if(i<j) // Remember that i will never be equal to j, either i>j or i<j as everytime the overloop will happen in each cases. This thing is verified my me as well....No need to waste time to think about this.
+            if(i<j) // We are not doing i<=j because for arr[i]=arr[j] as both the elements are same so no need to do swapping in this case.
             {
                 int temp=arr[i];
                 arr[i]=arr[j];
