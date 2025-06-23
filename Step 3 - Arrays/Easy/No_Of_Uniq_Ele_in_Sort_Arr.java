@@ -16,19 +16,37 @@ public class No_Of_Uniq_Ele_in_Sort_Arr {
         int Uniq_Ele=UniqueElement(arr);
         System.out.println("The no. of unique elements int the sorted array is "+Uniq_Ele);
     }
+
+    // Brute Force Solution (In this process the T.C is O(nlog n+n)) [+n is for transferring unique elements from set to array in worst case]  S.C is O(n) for worst case
+
+    // public static int UniqueElement(int[] arr)
+    // {
+    //     Set<Integer> ts=new TreeSet<>(); // Similar to set<int> ts;
+
+    //     for(int i=0;i<arr.length;i++)
+    //         ts.add(arr[i]);
+        
+    //         int index=0;
+    //     for(int s:ts)
+    //     {
+    //         arr[index]=s;
+    //         index++;
+    //     }
+    //     return index;
+    // }
+
+
+
+
+    // Optimal Solution (In this process the T.C is O(n))
     public static int UniqueElement(int[] arr)
     {
-        Set<Integer> ts=new TreeSet<>(); // Similar to set<int> ts;
-
-        for(int i=0;i<arr.length;i++)
-            ts.add(arr[i]);
-        
-            int index=0;
-        for(int s:ts)
+        int i=0;
+        for(int j=1;j<arr.length;j++)
         {
-            arr[index]=s;
-            index++;
+            if(arr[i]!=arr[j])
+                arr[++i]=arr[j];
         }
-        return index;
+        return i+1;
     }
 }
