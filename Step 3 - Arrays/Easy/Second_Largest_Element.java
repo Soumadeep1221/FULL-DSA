@@ -2,34 +2,57 @@ import java.util.Scanner;
 
 public class Second_Largest_Element
 {
+    
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int arr[]=new int[6];
+        System.out.println("Enter the elements in the array:-");
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        sc.close();
+
+
+        // Brute Force Solution 
+
+        // MergeSort(arr,0,5);
+
+        // int largest=arr[arr.length-1];
+        // int slargest=-1;
+        // for(int i=arr.length-2;i>=0;i--)
+        // {
+        //     if(arr[i]!=largest)
+        //     {
+        //         slargest=arr[i];
+        //         break;
+        //     } 
+        // }
+        // System.out.println("The second largest element in the array is "+slargest);
+
+
+
+
+        // Better Solution
+
+        // int slarge=SecondLargestElement(arr);
+
+        // System.out.println("The largest element in the array is "+slarge);
+
+
+
+
+        // Optimal Solution
+
+        int slarge=SecondLargestElement(arr);
+
+        System.out.println("The largest element in the array is "+slarge);
+    }
+
+
     // Brute Force Solution (The T.C of this process is O(nlog n+n)) [Extra +n to find the second largest number]
-    // public static void main(String[] args)
-    // {
-    //     Scanner sc=new Scanner(System.in);
-    //     int arr[]=new int[6];
-    //     System.out.println("Enter the elements in the array:-");
-    //     for(int i=0;i<arr.length;i++)
-    //     {
-    //         arr[i]=sc.nextInt();
-    //     }
-    //     sc.close();
 
-    //     // Merge Sort
-
-    //     MergeSort(arr,0,5);
-
-    //     int largest=arr[arr.length-1];
-    //     int slargest=-1;
-    //     for(int i=arr.length-2;i>=0;i--)
-    //     {
-    //         if(arr[i]!=largest)
-    //         {
-    //             slargest=arr[i];
-    //             break;
-    //         } 
-    //     }
-    //     System.out.println("The second largest element in the array is "+slargest);
-    // }
     // public static void Merge(int[] arr,int low,int mid,int high)
     // {
     //     int i=low;
@@ -82,22 +105,9 @@ public class Second_Largest_Element
 
 
 
+
     // Better Solution(The T.C of this process is O(n+n)=O(2n))
-    // public static void main(String[] args) 
-    // {
-    //     Scanner sc=new Scanner(System.in);
-    //     int arr[]=new int[6];
-    //     System.out.println("Enter the elements in the array:-");
-    //     for(int i=0;i<arr.length;i++)
-    //     {
-    //         arr[i]=sc.nextInt();
-    //     }
-    //     sc.close();
 
-    //     int slarge=SecondLargestElement(arr);
-
-    //     System.out.println("The largest element in the array is "+slarge);
-    // }
     // public static int SecondLargestElement(int[] arr)
     // {
     //     int large=LargestElement(arr);
@@ -123,22 +133,9 @@ public class Second_Largest_Element
 
 
 
+
     // Optimal Solution (The T.C of this process is O(n))
-    public static void main(String[] args) 
-    {
-        Scanner sc=new Scanner(System.in);
-        int arr[]=new int[6];
-        System.out.println("Enter the elements in the array:-");
-        for(int i=0;i<arr.length;i++)
-        {
-            arr[i]=sc.nextInt();
-        }
-        sc.close();
-
-        int slarge=SecondLargestElement(arr);
-
-        System.out.println("The largest element in the array is "+slarge);
-    }
+    
     public static int SecondLargestElement(int[] arr)
     {
         int largest=arr[0];
