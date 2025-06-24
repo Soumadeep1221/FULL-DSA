@@ -20,23 +20,8 @@ public class Left_Rotate_By_D_Places {
         int n=sc.nextInt();
         sc.close();
 
-        n=n%arr.length;
+        Rotate_By_D_Places(arr,n);
         
-
-        // Brute Force Solution
-
-        // Rotate_By_D_Places(arr,n);
-
-
-
-
-        // Optimal Solution
-
-        Reverse(arr,0,n);
-        Reverse(arr,n,arr.length);
-        Reverse(arr,0,arr.length);
-
-
         // Required Array
         for(int i=0;i<arr.length;i++)
             System.out.print(arr[i]+" ");
@@ -66,6 +51,15 @@ public class Left_Rotate_By_D_Places {
 
 
    // Optimal Solution (In this process the T.C is O(d) + O(n-d) + O(n) = O(2n) where d=Place to rotate  n=Size of the array)
+   public static void Rotate_By_D_Places(int[] arr,int n)
+   {
+        n=n%arr.length;
+
+        Reverse(arr,0,n);
+        Reverse(arr,n,arr.length);
+        Reverse(arr,0,arr.length);
+   }
+
    public static void Reverse(int[] arr,int st,int end)
    {
         while (st<end)

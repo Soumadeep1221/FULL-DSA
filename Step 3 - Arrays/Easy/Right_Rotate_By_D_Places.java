@@ -20,24 +20,7 @@ public class Right_Rotate_By_D_Places {
         int n=sc.nextInt();
         sc.close();
 
-        n=n%arr.length;
-        
-        int diff=arr.length-n;
-
-        // Brute Force Solution
-
-        // Rotate_By_D_Places(arr,diff);
-
-
-
-
-        // Optimal Solution
- 
-
-        Reverse(arr,0,diff);
-        Reverse(arr,diff,arr.length);
-        Reverse(arr,0,arr.length);
-
+        Rotate_By_D_Places(arr,n);
 
         // Required Array
         for(int i=0;i<arr.length;i++)
@@ -48,6 +31,8 @@ public class Right_Rotate_By_D_Places {
    // Brute Force Solution (In the process the T.C is O(d) + O(n-d) + O(d) = O(n+d) where d=Place to rotate  n=Size of the array)
 //    public static void Rotate_By_D_Places(int[] arr,int n)
 //    {
+//         n=n%arr.length;
+
 //         int[] temp=new int[n];
 
 //         for(int i=0;i<n;i++)
@@ -68,6 +53,17 @@ public class Right_Rotate_By_D_Places {
 
 
    // Optimal Solution (In this process the T.C is O(d) + O(n-d) + O(n) = O(2n) where d=Place to rotate  n=Size of the array)
+   public static void Rotate_By_D_Places(int[] arr,int n)
+   {
+        n=n%arr.length;
+
+        int diff=arr.length-n;
+
+        Reverse(arr,0,diff);
+        Reverse(arr,diff,arr.length);
+        Reverse(arr,0,arr.length);
+   }
+
    public static void Reverse(int[] arr,int st,int end)
    {
         while (st<end)
