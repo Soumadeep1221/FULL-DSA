@@ -22,7 +22,7 @@ public class HashMapp {
         {
             hp.put(nums[i],hp.getOrDefault(nums[i],0)+1);
         }
-        for(Map.Entry<Integer,Integer> k:hp.entrySet())
+        for(Map.Entry<Integer,Integer> k:hp.entrySet()) // Here you can use "var" which is similar to "auto" in C++. Use "var" wisely as it has some limitions.
         {
             if(k.getValue()>max)
             {
