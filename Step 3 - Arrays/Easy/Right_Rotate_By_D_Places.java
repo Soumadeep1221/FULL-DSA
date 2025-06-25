@@ -52,7 +52,7 @@ public class Right_Rotate_By_D_Places {
    
 
 
-   // Optimal Solution (In this process the T.C is O(d) + O(n-d) + O(n) = O(2n) where d=Place to rotate  n=Size of the array)
+   // Optimal Solution (In this process the T.C is O(d/2) + O((n-d)/2) + O(n/2) = O(n) where d=Place to rotate  n=Size of the array)
    public static void Rotate_By_D_Places(int[] arr,int n)
    {
         n=n%arr.length;

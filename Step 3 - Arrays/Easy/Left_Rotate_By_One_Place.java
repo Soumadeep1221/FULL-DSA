@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Left_Rotate_By_One_Place {
 
-    // This is the Brute Force/Better/Optimal Solution whose T.C is O(n)...No better solution is there for this Q. And S.C is O(1).
+    // This is the Brute Force/Better/Optimal Solution whose T.C is O(n)...No better solution is there for this Q. and S.C is O(1).
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int arr[]=new int[6];
