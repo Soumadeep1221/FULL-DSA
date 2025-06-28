@@ -31,6 +31,8 @@ public class Left_Rotate_By_D_Places {
    // Brute Force Solution (In the process the T.C is O(d) + O(n-d) + O(d) = O(n+d) where d=Place to rotate  n=Size of the array)
 //    public static void Rotate_By_D_Places(int[] arr,int n)
 //    {
+//         n=n%arr.length;
+
 //         int[] temp=new int[n];
 
 //         for(int i=0;i<n;i++)

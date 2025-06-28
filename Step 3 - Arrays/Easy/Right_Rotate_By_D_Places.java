@@ -33,19 +33,21 @@ public class Right_Rotate_By_D_Places {
 //    {
 //         n=n%arr.length;
 
-//         int[] temp=new int[n];
+//         int diff=arr.length-n;
 
-//         for(int i=0;i<n;i++)
+//         int[] temp=new int[diff];
+
+//         for(int i=0;i<diff;i++)
 //         {
 //             temp[i]=arr[i];
 //         }
-//         for(int i=n;i<arr.length;i++)
+//         for(int i=diff;i<arr.length;i++)
 //         {
-//             arr[i-n]=arr[i];
+//             arr[i-diff]=arr[i];
 //         }
-//         for(int i=0;i<n;i++)
+//         for(int i=0;i<diff;i++)
 //         {
-//             arr[arr.length-n+i]=temp[i];
+//             arr[arr.length-diff+i]=temp[i];
 //         }
 //    }
    
