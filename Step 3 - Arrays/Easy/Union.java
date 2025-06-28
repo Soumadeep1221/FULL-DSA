@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-import java.util.HashSet;
+// import java.util.TreeSet;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
+// import java.util.Set;
 
 public class Union {
     public static void main(String[] args) {
@@ -35,26 +35,74 @@ public class Union {
     }
 
 
-    // Brute Force Solution (T.C is O(n1log n) + O(n2log n) + O(n1+n2)[For Worst Case]= O(n1log n+n2log n+n1+n2) S.C is O(n1+n2)[For worst case] where n1=Size of arr1, n2=Size of arr2, n=Size of set)
+    // Brute Force Solution (T.C is O(n1log n) + O(n2log n) + O(n1+n2)[For Worst Case]= O(n1log n+n2log n+n1+n2) and S.C is O(n1+n2)[For worst case] where n1=Size of arr1, n2=Size of arr2, n=Size of set)
     
+    // static List<Integer> Unionn(int[] arr1,int[] arr2)
+    // {
+    //     List<Integer> ele=new ArrayList<>();
+    //     Set<Integer> st=new TreeSet<>();
+
+    //     for(int i=0;i<arr1.length;i++)
+    //     {
+    //         st.add(arr1[i]);
+    //     }
+    //     for(int i=0;i<arr2.length;i++)
+    //     {
+    //         st.add(arr2[i]);
+    //     }
+
+    //     for (Integer i:st)
+    //     {
+    //         ele.add(i);
+    //     }
+    //     return ele;
+    // }
+
+
+
+
+    // Optimal Solution (T.c is O(n1+n2) as we are pointing to each elements in both the arrays for once and S.C is O(n1+n2)[For worst case])
+
     static List<Integer> Unionn(int[] arr1,int[] arr2)
     {
-        List<Integer> ele=new ArrayList<>();
-        Set<Integer> st=new HashSet<>();
+        List<Integer> uni=new ArrayList<>();
+        int i=0;
+        int j=0;
 
-        for(int i=0;i<arr1.length;i++)
+        while (i<arr1.length && j<arr2.length)
         {
-            st.add(arr1[i]);
-        }
-        for(int i=0;i<arr2.length;i++)
-        {
-            st.add(arr2[i]);
+            if(arr1[i]<=arr2[j])
+            {
+                if(uni.size()==0 || uni.get(uni.size()-1)!=arr1[i])
+                    uni.add(arr1[i]);
+            i++;
+            }
+            else
+            {
+                if(uni.size()==0 || uni.get(uni.size()-1)!=arr2[j])
+                    uni.add(arr2[j]);
+            j++;
+            }
         }
 
-        for (Integer i:st)
+        while (i<arr1.length)
         {
-            ele.add(i);
+            if(uni.get(uni.size()-1)!=arr1[i])
+            {
+                uni.add(arr1[i]);
+            }
+        i++;
         }
-        return ele;
+        
+        while (j<arr2.length)
+        {
+            if(uni.get(uni.size()-1)!=arr2[j])
+            {
+                uni.add(arr2[j]);
+            }
+        j++;
+        }
+
+        return uni;
     }
 }
