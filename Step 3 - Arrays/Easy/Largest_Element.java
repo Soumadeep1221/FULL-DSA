@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Largest_Element
@@ -16,9 +17,9 @@ public class Largest_Element
 
         // Brute Force Solution 
 
-        // MergeSort(arr,0,5);
+        // int largest_Ele=Sort(arr);
 
-        // System.out.println("The largest element in the array is "+arr[arr.length-1]);
+        // System.out.println("The largest element in the array is "+largest_Ele);
 
 
 
@@ -38,53 +39,10 @@ public class Largest_Element
 
     // Brute Force Solution (The T.C of this process is O(nlog n))
 
-    // public static void Merge(int[] arr,int low,int mid,int high)
+    // static int Sort(int[] arr)
     // {
-    //     int i=low;
-    //     int j=mid+1;
-    //     int[] temp=new int[arr.length];
-    //     int count=0;
-    //     while (i<=mid && j<=high)
-    //     {
-    //         if(arr[i]>=arr[j])
-    //         {
-    //             temp[count]=arr[j];
-    //             j++;
-    //         }
-    //         else
-    //         {
-    //             temp[count]=arr[i];
-    //             i++;
-    //         }
-    //         count++;
-    //     }
-    //     while (i<=mid) // If extra elemnents are left in the left sub-array.
-    //     {
-    //        temp[count]=arr[i];
-    //         i++;
-    //         count++;
-    //     }
-
-    //     while (j<=high) // If extra elements are left in the right sub-array.
-    //     {
-    //         temp[count]=arr[j];
-    //         j++;
-    //         count++;
-    //     }
-
-    //     for(int k=low;k<=high;k++)
-    //     {
-    //         arr[k]=temp[k-low];
-    //     }
-    // }
-    // public static void MergeSort(int[] arr,int low,int high)
-    // {
-    //     if(low>=high) // You can also give '==' instead of '>='.Using this just to be safe.
-    //         return;
-    //     int mid=(low+high)/2;
-    //     MergeSort(arr, low, mid);
-    //     MergeSort(arr,mid+1,high);
-    //     Merge(arr,low,mid,high);
+    //     Arrays.sort(arr);
+    //     return arr[arr.length-1];
     // }
 
 
